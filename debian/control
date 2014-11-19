@@ -1,0 +1,16 @@
+Source: example-package-virtualenv
+Section: misc
+Priority: optional
+Maintainer: Dhananjay <dj@inflo.ws>
+Build-Depends: debhelper (>= 9), python, dh-virtualenv, python-dev
+Standards-Version: 3.9.5
+
+Package: example-package-virtualenv
+Architecture: any
+Section: net
+Priority: optional
+Depends: ${python:Depends}, ${misc:Depends}, python-dev
+Conflicts: example-package-virtualenv
+Description: simple python package
+	     bleh! bleh and meh!.
+

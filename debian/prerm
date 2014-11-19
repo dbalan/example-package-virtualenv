@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+clean_pyc()
+{
+    pyclean -p example_package_virtualenv
+}
+
+case "$1" in
+    remove)
+	clean_pyc
+	;;
+
+    upgrade)
+	clean_pyc
+	;;
+
+    failed-upgrade|abort-install|abort-upgrade|disappear)
+	;;
+
+    *)
+	echo "prerm called with unknown argument \`$1'" >&2
+	exit 1
+	;;
+esac
